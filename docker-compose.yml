@@ -1,0 +1,16 @@
+---
+version: '3'
+services:
+
+ webserver:
+  image: jenkins
+  ports: 
+   - 1111:8080
+
+
+ qaserver:
+  image: tomcat
+  ports:
+   - 888:8080
+  links:
+   - webserver:jenkins  
